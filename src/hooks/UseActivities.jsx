@@ -5,7 +5,6 @@ const useActivities = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Simulate fetching data from an API
         const fetchActivities = async () => {
             setLoading(true);
             try {
