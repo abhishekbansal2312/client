@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ darkMode }) => {
     return (
-        <footer className="bg-gray-800 text-white p-4">
-            <div className="container mx-auto flex justify-between">
+        <footer className={`p-4 ${darkMode ? 'bg-gray-900 text-gray-300' : 'bg-gray-800 text-white'}`}>
+            <div className="container mx-auto flex flex-col md:flex-row justify-between">
                 <div>
                     <h3 className="text-lg font-bold mb-2">Quick Links</h3>
                     <ul>

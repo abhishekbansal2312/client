@@ -29,17 +29,17 @@ const App = () => {
     <ActivitiesProvider>
       <Router>
         <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
-          <Header />
+          <Header darkMode={darkMode}/>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/all-activities" element={<Allactivities />} />
-            <Route path="/society" element={<Societiespage />} />
-            <Route path="/society/:societyId" element={<Societypage />} />
-            <Route path="/activity/:activityId" element={<Activitydetail />} />
-            <Route path="/auth/login" element={<Login />} />
+            <Route path="/" element={<Home darkMode={darkMode} />} />
+            <Route path="/all-activities" element={<Allactivities darkMode={darkMode} />} />
+            <Route path="/society" element={<Societiespage darkMode={darkMode} />} />
+            <Route path="/society/:societyId" element={<Societypage darkMode={darkMode} />} />
+            <Route path="/activity/:activityId" element={<Activitydetail darkMode={darkMode} />} />
+            <Route path="/auth/login" element={<Login darkMode={darkMode} />} />
           </Routes>
           <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
-          <Footer/>
+          <Footer darkMode={darkMode}/>
         </div>
       </Router>
     </ActivitiesProvider>
