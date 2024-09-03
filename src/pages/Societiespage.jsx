@@ -7,10 +7,9 @@ const societies = [
 ];
 
 const Societiespage = ({ darkMode }) => {
-    console.log("Darkmode", darkMode);
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
-            <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-white'} text-white ${darkMode ? 'dark:text-gray-300' : 'text-gray-900'} p-6`}>
+            <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-white'} text-gray-700 ${darkMode ? 'dark:text-gray-300' : 'text-gray-900'} p-6`}>
                 <h1 className="text-4xl font-bold mb-6">College Societies</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {societies.map(society => (

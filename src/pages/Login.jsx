@@ -63,7 +63,7 @@ const Login = ({ darkMode }) => {
                                 onChange={(e) => setStudentId(e.target.value)}
                                 name="number"
                                 placeholder="Enter 9 digit student id"
-                                className="w-full p-3 border border-gray-300 dark:border-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                className="w-full p-3 border text-black border-gray-300 dark:border-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             />
                         </div>
                         <div className="mb-6">
@@ -74,7 +74,7 @@ const Login = ({ darkMode }) => {
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="password"
                                 placeholder="Enter your password"
-                                className="w-full p-3 border border-gray-300 dark:border-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                className="w-full p-3 border text-black border-gray-300 dark:border-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             />
                         </div>
                         <button
@@ -85,6 +85,9 @@ const Login = ({ darkMode }) => {
                         </button>
                         <p className="mt-4 text-center text-gray-600 dark:text-dark-text">
                             Forget Password? <Link to="/auth/register" className="text-indigo-500 hover:underline">Click Here</Link>
+                        </p>
+                        <p className="mt-4 text-center text-gray-600 dark:text-dark-text">
+                            Already Registered? <Link to="/auth/register" className="text-indigo-500 hover:underline">Click Here</Link>
                         </p>
                     </form>
                 </div>

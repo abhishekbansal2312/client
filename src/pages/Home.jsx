@@ -9,7 +9,7 @@ const Home = ({ darkMode }) => {
         <div className={`${darkMode ? 'dark' : ''}`}>
             <div className="min-h-screen flex flex-col">
                 <div className="flex flex-grow">
-                    <Sidebar className="w-1/4" />
+                    {/* <Sidebar className="w-1/4" /> */}
                     <main className="w-1/2 p-6">
                         <Featuredactivity />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">

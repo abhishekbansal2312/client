@@ -10,6 +10,7 @@ import Header from './components/Header';
 import DarkMode from './components/DarkMode'; 
 import Societiespage from './pages/Societiespage';
 import Footer from './components/Footer';
+import Signup from './pages/Signup';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/society/:societyId" element={<Societypage darkMode={darkMode} />} />
             <Route path="/activity/:activityId" element={<Activitydetail darkMode={darkMode} />} />
             <Route path="/auth/login" element={<Login darkMode={darkMode} />} />
+            <Route path="/auth/register" element={<Signup darkMode={darkMode} />} />
           </Routes>
           <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
           <Footer darkMode={darkMode}/>
