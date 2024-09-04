@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
+// import Sidebar from '../components/Sidebar';
 import Featuredactivity from '../components/Featuredactivity';
 import Activitycard from '../components/Activitycard';
 import Upcomingevents from '../components/Upcomingevents';

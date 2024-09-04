@@ -54,9 +54,9 @@ const Navbar = ({ darkMode }) => {
                         Home
                     </Link>
                     <Link
-                        to="/society"
+                        to="/members"
                         className={`border-l border-gray-300 pr-3 pl-3 transition-colors duration-300 ${darkMode ? 'text-gray-300 hover:text-gray-400' : 'text-black hover:text-gray-600'}`}>
-                        Society
+                        Members
                     </Link>
                     <Link
                         to="/gallery"
@@ -120,9 +120,9 @@ const Navbar = ({ darkMode }) => {
                     Home
                 </Link>
                 <Link
-                    to="/society"
+                    to="/members"
                     className={`block px-4 py-2 transition-colors duration-300 ${darkMode ? 'text-gray-300 hover:bg-gray-800' : 'text-black hover:bg-gray-200'}`}>
-                    Society
+                    Members
                 </Link>
                 {isAuthenticated ? (
                     <button
