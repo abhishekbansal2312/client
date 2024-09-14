@@ -47,7 +47,7 @@ const Members = ({ darkMode }) => {
                 <h1 className="text-4xl font-bold mb-6">Hobbies Club Members</h1>
                 
                 {/* Flex container to keep teacher and student sections separated but aligned horizontally */}
-                <div className="flex flex-col space-y-4">
+                <div className="flex flex-col space-y-4 lg:flex-row lg:space-x-8 lg:space-y-0">
                     {/* Teachers Section */}
                     <div className="flex-1">
                         <h2 className="text-3xl font-bold mb-4">Teachers</h2>

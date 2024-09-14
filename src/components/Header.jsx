@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = ({ darkMode }) => {
+const Navbar = ({ isAuthenticated, setIsAuthenticated, darkMode }) => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -17,7 +16,7 @@ const Navbar = ({ darkMode }) => {
 
     const handleLogout = () => {
         localStorage.removeItem('authToken');
-        setIsAuthenticated(false);
+        
         navigate('/auth/login');
     };
 
@@ -123,6 +122,11 @@ const Navbar = ({ darkMode }) => {
                     to="/members"
                     className={`block px-4 py-2 transition-colors duration-300 ${darkMode ? 'text-gray-300 hover:bg-gray-800' : 'text-black hover:bg-gray-200'}`}>
                     Members
+                </Link>
+                <Link
+                    to="/gallery"
+                    className={`border-l border-gray-300 pr-3 pl-3 transition-colors duration-300 ${darkMode ? 'text-gray-300 hover:text-gray-400' : 'text-black hover:text-gray-600'}`}>
+                    Gallery
                 </Link>
                 {isAuthenticated ? (
                     <button

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Login = ({ darkMode }) => {
+const Login = ({ isAuthenticated, setIsAuthenticated, darkMode }) => {
 
     const navigate = useNavigate();
+    
 
     const [studentId, setStudentId] = useState('');
     const [password, setPassword] = useState('');
@@ -38,6 +39,7 @@ const Login = ({ darkMode }) => {
             const data = await response.json();
             console.log(data);
             localStorage.setItem('authToken', data.token);
+            setIsAuthenticated(true);
 
             navigate('/');
         } catch (err) {
@@ -52,7 +54,7 @@ const Login = ({ darkMode }) => {
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
             <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-dark-bg">
-                <div className="bg-white dark:bg-dark-card p-8 rounded-lg shadow-lg w-full max-w-md">
+                <div className="bg-white dark:bg-dark-card p-8 rounded-lg shadow-lg w-full max-w-md sm:max-w-lg md:max-w-xl">
                     <h2 className="text-2xl font-bold mb-6 text-center dark:text-dark-text">Login</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
@@ -63,7 +65,7 @@ const Login = ({ darkMode }) => {
                                 onChange={(e) => setStudentId(e.target.value)}
                                 name="number"
                                 placeholder="Enter 9 digit student id"
-                                className="w-full p-3 border text-black border-gray-300 dark:border-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                className={`w-full p-3 border ${darkMode ? 'border-gray-600 bg-gray-500 text-gray-100' : 'border-gray-300 bg-gray-100 text-gray-900'} rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500`}
                             />
                         </div>
                         <div className="mb-6">
@@ -74,7 +76,7 @@ const Login = ({ darkMode }) => {
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="password"
                                 placeholder="Enter your password"
-                                className="w-full p-3 border text-black border-gray-300 dark:border-dark-border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                className={`w-full p-3 border ${darkMode ? 'border-gray-600 bg-gray-500 text-gray-100' : 'border-gray-300 bg-gray-100 text-gray-900'} rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500`}
                             />
                         </div>
                         <button

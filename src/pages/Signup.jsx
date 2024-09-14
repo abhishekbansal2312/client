@@ -35,7 +35,7 @@ const Signup = ({ darkMode }) => {
 
     return (
         <div className={`flex justify-center items-center min-h-screen ${darkMode ? 'bg-dark-bg' : 'bg-gray-100'}`}>
-            <div className={`p-8 rounded-lg shadow-lg w-full max-w-md ${darkMode ? 'bg-dark-card' : 'bg-white'}`}>
+            <div className={`p-8 rounded-lg shadow-lg w-full max-w-md sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl ${darkMode ? 'bg-dark-card' : 'bg-white'}`}>
                 <h2 className={`text-2xl font-bold mb-6 text-center ${darkMode ? 'text-dark-text' : 'text-black'}`}>
                     Sign Up
                 </h2>

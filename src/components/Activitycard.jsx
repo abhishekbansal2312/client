@@ -6,7 +6,7 @@ const Activitycard = ({ darkMode }) => {
             <img 
                 src="https://via.placeholder.com/400" 
                 alt="Activity" 
-                className="w-full h-32 sm:h-48 object-cover" 
+                className="w-full h-32 sm:h-48 md:h-56 lg:h-64 object-cover" 
             />
             <div className="p-4">
                 <h3 className={`text-lg font-bold ${darkMode ? 'text-gray-100' : 'text-gray-900'}`}>
