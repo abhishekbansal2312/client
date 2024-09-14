@@ -12,7 +12,7 @@ const Signup = ({ darkMode }) => {
 
     function onSubmit(e) {
         e.preventDefault();
-        const url = 'https://server-xum6.onrender.com/api/auth/register';
+        const url = 'http://localhost:4600/api/auth/register';
 
         fetch(url, {
             method: "POST",
