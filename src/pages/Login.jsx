@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Login = ({ darkMode }) => {
   const navigate = useNavigate();
 
@@ -40,6 +41,7 @@ const Login = ({ darkMode }) => {
         throw new Error("Login failed. Please check your credentials.");
       }
 
+
       const data = await response.json();
       console.log(data);
       localStorage.setItem("authToken", data.token); // Optional: Use if you need to access token directly
@@ -54,6 +56,7 @@ const Login = ({ darkMode }) => {
       }
     }
   };
+
 
   return (
     <div className={`${darkMode ? "dark" : ""}`}>

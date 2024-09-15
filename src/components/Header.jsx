@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Navbar = ({ darkMode }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -17,6 +18,7 @@ const Navbar = ({ darkMode }) => {
   const handleLogout = () => {
     // Clear token from local storage
     localStorage.removeItem("authToken");
+
 
     // Send DELETE request to remove the authentication cookie
     fetch("http://localhost:4600/api/auth/logout", {

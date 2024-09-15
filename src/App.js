@@ -10,8 +10,15 @@ import Footer from './components/Footer';
 import Signup from './pages/Signup';
 import Members from './pages/Members';
 import MemberCard from './components/Membercard';
+import Gallery from './pages/Gallery';
+import EventGallery from './components/EventGallery';
+import AddEvent from './components/AddEvent'; // Import AddEvent component
 
 const App = () => {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('darkMode') === 'true';
   });
@@ -26,22 +33,27 @@ const App = () => {
   }, [darkMode]);
 
   return (
-      <Router>
-        <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
-          <Header darkMode={darkMode}/>
+    <Router>
+      <div className={`flex flex-col min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
+        <Header isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} darkMode={darkMode} />
+        <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home darkMode={darkMode} />} />
-            <Route path="/all-activities" element={<Allactivities darkMode={darkMode} />} />
-            <Route path="/members" element={<Members darkMode={darkMode} />} />
-            <Route path="/member/:id" element={<MemberCard darkMode={darkMode}/>} />
+            <Route path="/" element={<Home setIsAuthenticated={setIsAuthenticated} darkMode={darkMode} />} />
+            <Route path="/all-activities" element={<Allactivities setIsAuthenticated={setIsAuthenticated} darkMode={darkMode} />} />
+            <Route path="/members" element={<Members setIsAuthenticated={setIsAuthenticated} darkMode={darkMode} />} />
+            <Route path="/member/:id" element={<MemberCard setIsAuthenticated={setIsAuthenticated} darkMode={darkMode}/>} />
+            <Route path="/gallery" element={<Gallery setIsAuthenticated={setIsAuthenticated} darkMode={darkMode}/>} />
+            <Route path="/gallery/:id" element={<EventGallery darkMode={darkMode}/>} />
             <Route path="/activity/:activityId" element={<Activitydetail darkMode={darkMode} />} />
-            <Route path="/auth/login" element={<Login darkMode={darkMode} />} />
+            <Route path="/auth/login" element={<Login setIsAuthenticated={setIsAuthenticated} darkMode={darkMode} />} />
             <Route path="/auth/register" element={<Signup darkMode={darkMode} />} />
+            <Route path="/add-event/:date" element={<AddEvent darkMode={darkMode}/>} /> {/* Add this route */}
           </Routes>
-          <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
-          <Footer darkMode={darkMode}/>
-        </div>
-      </Router>
+        </main>
+        <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Footer darkMode={darkMode} />
+      </div>
+    </Router>
   );
 };
 
